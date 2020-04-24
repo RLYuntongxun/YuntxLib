@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YuntxLib"
-  s.version      = "5.5.1.1"
+  s.version      = "5.5.2"
   s.summary      = "容联云通讯 SDK(如果看不到最新版本，请使用 pod repo update 命令更新一下本地pod仓库)"
 
   # This description is used to generate tags and improve search results.
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   #
 
   s.license      = "MIT"
-  s.author             = { "lixiaojie" => "14971467480@163.com" }
+  s.author             = { "lixiaojie" => "13971467480@163.com" }
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/RLYuntongxun/YuntxLib.git", :tag => "#{s.version}" }
   s.resources  = "sdk/CCPSDKBundle.bundle"

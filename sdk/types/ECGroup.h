@@ -166,6 +166,29 @@ typedef NS_ENUM(NSUInteger,ECGroupPermMode){
  */
 @property (nonatomic, assign) BOOL isPushAPNS;
 
+/**
+@property
+@brief isForbid 是否开启全员禁言 YES:开启 NO:关闭
+*/
+@property (nonatomic, assign) BOOL isForbid;
+
+/**
+@property
+@brief isManage 是否仅群主可管理  0 不使用此功能 1:否 2:是
+*/
+@property (nonatomic, assign) NSInteger isManage;
+
+/**
+@property
+@brief isAtAll 是否仅群主和管理员可@所有人 0 不使用此功能 1:否 2:是
+*/
+@property (nonatomic, assign) NSInteger isAtAll;
+
+/**
+@property
+@brief inviteOperation 普通成员是否可拉人入群 1:是 2:否 缺省1
+*/
+@property (nonatomic, assign) NSInteger inviteOperation;
 
 /**
  @method

@@ -54,8 +54,16 @@ typedef NS_ENUM(NSUInteger, ECGroupMessageType) {
     ECGroupMessageType_VerifyJoin,
     
     /**群组成员邀请加入，发给管理员审核通知**/
-    ECGroupMessageType_InviteMultiple
+    ECGroupMessageType_InviteMultiple,
     
+    /**群成员被禁言*/
+    ECGroupMessageType_ForbidChange = 17,
+    /**开启全员禁言*/
+    ECGroupMessageType_AllForbidChange,
+    /**群成员被解除禁言*/
+    ECGroupMessageType_NotForbidChange,
+    /**关闭全员禁言*/
+    ECGroupMessageType_NotAllForbidChange,
 };
 
 
@@ -489,6 +497,96 @@ typedef NS_ENUM(NSUInteger, ECGroupMessageType) {
  @brief
  */
 @property (nonatomic, copy) NSString *qrContent;
+
+/**
+ @brief 1 讨论组  2普通群组
+ */
+@property (nonatomic, copy) NSString *target;
+
+@end
+
+
+#pragma mark - 群禁言相关通知
+/**
+ * 成员禁言通知
+ */
+@interface ECChangeForbidMsg : ECGroupNoticeMessage
+
+/**
+ @brief 修改的成员voip号
+ */
+@property (nonatomic, copy) NSString *member;
+
+/**
+ @brief 昵称
+ */
+@property (nonatomic, copy) NSString *nickName;
+
+/**
+ @brief 1 讨论组  2普通群组
+ */
+@property (nonatomic, copy) NSString *target;
+
+@end
+
+/**
+ * 全员禁言通知
+ */
+@interface ECChangeAllForbidMsg : ECGroupNoticeMessage
+
+/**
+ @brief 修改的成员voip号
+ */
+@property (nonatomic, copy) NSString *member;
+
+/**
+ @brief 昵称
+ */
+@property (nonatomic, copy) NSString *nickName;
+
+/**
+ @brief 1 讨论组  2普通群组
+ */
+@property (nonatomic, copy) NSString *target;
+
+@end
+
+/**
+ * 解除群成员禁言通知
+ */
+@interface ECChangeNotForbidMsg : ECGroupNoticeMessage
+
+/**
+ @brief 修改的成员voip号
+ */
+@property (nonatomic, copy) NSString *member;
+
+/**
+ @brief 昵称
+ */
+@property (nonatomic, copy) NSString *nickName;
+
+/**
+ @brief 1 讨论组  2普通群组
+ */
+@property (nonatomic, copy) NSString *target;
+
+@end
+
+/**
+ * 解除全员禁言通知
+ */
+@interface ECChangeNotAllForbidMsg : ECGroupNoticeMessage
+
+/**
+ @brief 修改的成员voip号
+ */
+@property (nonatomic, copy) NSString *member;
+
+/**
+ @brief 昵称
+ */
+@property (nonatomic, copy) NSString *nickName;
 
 /**
  @brief 1 讨论组  2普通群组
