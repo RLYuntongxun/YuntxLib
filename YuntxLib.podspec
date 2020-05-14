@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YuntxLib"
-  s.version      = "5.5.2"
+  s.version      = "5.5.3"
   s.summary      = "容联云通讯 SDK(如果看不到最新版本，请使用 pod repo update 命令更新一下本地pod仓库)"
 
   # This description is used to generate tags and improve search results.
